@@ -30,10 +30,18 @@
 
 | 版本                                                         | 说明                                                         | 安装包大小   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
-| ✨推荐：**[云端版本（点击下载）](https://github.com/joewongjc/type4me/releases/download/v1.9.5/Type4Me-v1.9.5-cloud.dmg)** | 支持云端识别 (Intel + Apple Silicon)，需配置语音、大模型API Key。语音识别推荐火山-豆包语音/Soniox、体验最好。火山注册有送额度，单价都十分便宜。[配置指引](https://my.feishu.cn/wiki/QdEnwBMfUi0mN4k3ucMcNYhUnXr) | ~4MB  |
+| ✨推荐：**[云端版本（点击下载）](https://github.com/joewongjc/type4me/releases/download/v1.9.6/Type4Me-v1.9.6-cloud.dmg)** | 支持云端识别 (Apple Silicon)，需配置语音、大模型API Key。语音识别推荐火山-豆包语音/Soniox、体验最好。火山注册有送额度，单价都十分便宜。[配置指引](https://my.feishu.cn/wiki/QdEnwBMfUi0mN4k3ucMcNYhUnXr) | ~4MB  |
 | **[本地版本（点击下载）](https://github.com/joewongjc/type4me/releases/download/v1.9.5/Type4Me-v1.9.5-local-apple-silicon.dmg)** | 内嵌 SenseVoice + Qwen3-ASR 本地识别引擎 (Apple Silicon only，约占用8GB内存，建议32GB以上)，大模型依旧需要配置API Key或Ollama本地服务。 | ~700MB |
 
 系统要求：macOS 14+ (Sonoma)
+
+免费分发版未经过 Apple 公证。安装后请在 Finder 中右键 Type4Me，选择「打开」并确认。如果仍被拦截，可运行：
+
+```bash
+xattr -dr com.apple.quarantine /Applications/Type4Me.app
+```
+
+无需关闭 macOS 的全局 Gatekeeper。
 
 
 ## 界面预览
@@ -178,30 +186,22 @@ Two editions, sharing the same config files. You can switch between them at any 
 
 | Edition | Description | Size |
 | ------- | ----------- | ---- |
-| ✨Recommended: **[Cloud Edition (Download)](https://github.com/joewongjc/type4me/releases/download/v1.9.5/Type4Me-v1.9.5-cloud.dmg)** | Cloud recognition (Intel + Apple Silicon). Requires ASR and LLM API keys. Recommended: Volcano/Doubao or Soniox for best experience. [Setup Guide](https://my.feishu.cn/wiki/QdEnwBMfUi0mN4k3ucMcNYhUnXr) | ~4MB |
+| ✨Recommended: **[Cloud Edition (Download)](https://github.com/joewongjc/type4me/releases/download/v1.9.6/Type4Me-v1.9.6-cloud.dmg)** | Cloud recognition (Apple Silicon). Requires ASR and LLM API keys. Recommended: Volcano/Doubao or Soniox for best experience. [Setup Guide](https://my.feishu.cn/wiki/QdEnwBMfUi0mN4k3ucMcNYhUnXr) | ~4MB |
 | **[Local Edition (Download)](https://github.com/joewongjc/type4me/releases/download/v1.9.5/Type4Me-v1.9.5-local-apple-silicon.dmg)** | Bundled SenseVoice + Qwen3-ASR local recognition (Apple Silicon only, ~8GB RAM, 32GB+ recommended). LLM still requires API key or local Ollama. | ~700MB |
 
 System requirements: macOS 14+ (Sonoma)
 
-**DMG shows "damaged" or app won't open?**
+**DMG shows "unidentified developer" or the app won't open?**
 
-> Solution:
+> The free distribution build is not notarized by Apple. Drag Type4Me to Applications, then right-click it in Finder, choose Open, and confirm.
 >
-> - Step 1: Open Terminal and run:
+> If macOS still blocks it, remove quarantine from Type4Me only:
 >
->   xattr -d com.apple.quarantine /Applications/Type4Me.app
+> ```bash
+> xattr -dr com.apple.quarantine /Applications/Type4Me.app
+> ```
 >
->   ```bash
->   spctl --master-disable
->   ```
->
-> - Step 2: Go to System Settings > Privacy & Security > "Allow applications from", select "Anywhere"
->
-> - Step 3: Open the DMG and drag Type4Me to the Applications folder.
->
-> - Step 4 (Optional): Revert "Allow applications from" back to its previous setting.
-
-> Apple Developer certification is still pending. This is a normal macOS Gatekeeper prompt that can be resolved with the steps above.
+> You do not need to disable Gatekeeper globally.
 
 **Option 2: Give this repo link to your AI agent and let it deploy for you**
 
