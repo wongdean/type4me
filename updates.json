@@ -6,8 +6,8 @@
       "date": "2026-06-10",
       "notes": "- LLM 客户端和 URLSession 持久复用，减少重复连接开销\n- 推测 LLM 请求增加保守节流、单并发和 pending 合并，降低请求数量与延迟波动\n- 语音润色模式默认对 8 个语义字符以内的短句直接输出 final ASR\n- partial transcript 增加可靠性检测，异常候选不再触发 provisional LLM\n- 修复 LLM 设置页只填写 API Key、使用默认模型时无法保存或测试连接的问题\n- 正式写作模式的短句处理设置改为统一卡片和下拉菜单样式",
       "cloud_dmg_url": "https://github.com/joewongjc/type4me/releases/download/v1.9.6/Type4Me-v1.9.6-cloud.dmg",
-      "cloud_dmg_size": 3237995,
-      "cloud_dmg_sha256": "a56686ed23954669ecc016aca01473457fee0b8733bb8d4ae4059a7f159d0d9b"
+      "cloud_dmg_size": 3226673,
+      "cloud_dmg_sha256": "a2375f829fc8a8a93a3a1679419424e9544d6057d012f5fd7f4953ecf9b5dd2e"
     },
     {
       "version": "1.9.5",
